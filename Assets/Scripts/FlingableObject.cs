@@ -22,10 +22,14 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+        zero = Vector2.zero;
+    }
+
+    private void Start()
+    {
         GameController.gameController.updateList.Add(this);
         GameController.gameController.fixedUpdateList.Add(this);
-        rb = this.GetComponent<Rigidbody2D>();
-        zero = Vector2.zero;
         mainCam = Camera.main;
     }
 
