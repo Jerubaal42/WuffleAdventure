@@ -10,7 +10,6 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
     private Rigidbody2D rb;
     private Vector2 zero;
     private Camera mainCam;
-    public float flingSpeed = 5f;
     private Vector2[] speedMeasure = new Vector2[10];
     private int mouseAge = 0;
 #if UNITY_STANDALONE
@@ -30,52 +29,55 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
     {
         GameController.gameController.updateList.Add(this);
         GameController.gameController.fixedUpdateList.Add(this);
-        mainCam = Camera.main;
+        mainCam = CameraControl.mainCam;
     }
 
     public void UpdateFunction()
     {
+        if (GameController.gameController.allowMovement)
+        {
 #if UNITY_STANDALONE
-        if (Input.GetMouseButtonDown(0))
-        {
-            if(((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition)).sqrMagnitude < 9)
+            if (Input.GetMouseButtonDown(0))
             {
-                mouseAge = 0;
-                startPos = speedMeasure[9];
-                Debug.Log("Start: " + startPos);
-                aiming = true;
+                if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition)).sqrMagnitude < 1)
+                {
+                    mouseAge = 0;
+                    startPos = speedMeasure[9];
+                    Debug.Log("Start: " + startPos);
+                    aiming = true;
+                }
             }
-        }
-        if (Input.GetMouseButtonUp(0) && aiming == true)
-        {
-            direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
-            Debug.Log("End: " + direction);
-            flingActive = true;
-            aiming = false;
-        }
+            if (Input.GetMouseButtonUp(0) && aiming == true)
+            {
+                direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
+                Debug.Log("End: " + direction);
+                flingActive = true;
+                aiming = false;
+            }
 #endif
 #if UNITY_IOS || UNITY_ANDROID
-        if(Input.touchCount > 0)
-        {
-            touch = Input.GetTouch(0);
-            switch (touch.phase)
+            if(Input.touchCount > 0)
             {
-                case TouchPhase.Began:
-                    if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(touch.position)).sqrMagnitude < 9)
-                    {
-                        mouseAge = 0;
-                        startPos = speedMeasure[9];
-                        Debug.Log("Start: " + startPos);
-                    }
-                    break;
-                case TouchPhase.Ended:
-                    direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
-                    Debug.Log("End: " + direction);
-                    flingActive = true;
-                    break;
+                touch = Input.GetTouch(0);
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(touch.position)).sqrMagnitude < 9)
+                        {
+                            mouseAge = 0;
+                            startPos = speedMeasure[9];
+                            Debug.Log("Start: " + startPos);
+                        }
+                        break;
+                    case TouchPhase.Ended:
+                        direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
+                        Debug.Log("End: " + direction);
+                        flingActive = true;
+                        break;
+                }
             }
-        }
 #endif
+        }
     }
 
     public void FixedUpdateFunction()
