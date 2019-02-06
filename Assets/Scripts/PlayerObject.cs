@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerObject : MonoBehaviour
 {
     public static PlayerObject playerObject;
+    public int charType = 0;
+    public Transform rainbow;
 
     private void Awake()
     {
