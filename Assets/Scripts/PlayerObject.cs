@@ -11,6 +11,7 @@ public class PlayerObject : MonoBehaviour
     private void Awake()
     {
         playerObject = this;
+        rainbow = transform.Find("Rainbow1");
     }
 
     void Start()
