@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     private float initTimescale;
     private bool hasAllowedMovement;
     private bool isPaused = false;
-    private bool isMenu = true;
+    public bool isMenu = true;
     public GameObject pauseButton;
     public GameObject pauseCanvas;
     public int charType = 0;

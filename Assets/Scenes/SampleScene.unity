@@ -1025,6 +1025,11 @@ PrefabInstance:
       propertyPath: allowMovement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 832547853697852715, guid: aa528980443cf34438074e1409718d9e,
+        type: 3}
+      propertyPath: isMenu
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa528980443cf34438074e1409718d9e, type: 3}
 --- !u!1001 &3869706547287382404
