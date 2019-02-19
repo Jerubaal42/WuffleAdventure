@@ -8,7 +8,7 @@ public class Rainbow : Collectible
     protected override void Collect()
     {
         GameController.gameController.UpdateScore(score);
-        PlayerObject.playerObject.transform.Find("Rainbow1").GetComponent<GameObject>().SetActive(true);
+        PlayerObject.playerObject.transform.Find("Rainbow1").GetComponent<TrailRenderer>().enabled = true;
         Destroy(gameObject);
     }
 }

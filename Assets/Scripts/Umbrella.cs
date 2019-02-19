@@ -11,12 +11,25 @@ public class Umbrella : Collectible, IUpdate
     private Collider2D childCollide;
     private float time = 0;
     public float timeoutTime = 30;
+    private string arm;
 
     private void Start()
     {
         hinge = gameObject.GetComponent<DistanceJoint2D>();
-        charType = PlayerObject.playerObject.charType;
-        player = PlayerObject.playerObject.gameObject.transform.Find(charType == 0 ? "RightArm" : "Joint1").GetComponent<Rigidbody2D>();
+        charType = GameController.gameController.charType;
+        switch (charType)
+        {
+            case 0:
+                arm = "RightLimb";
+                break;
+            case 1:
+                arm = "Joint1";
+                break;
+            case 2:
+                arm = "RightArm/RightArm1/RightArm2/RightArm3/RightHand";
+                break;
+        }
+        player = PlayerObject.playerObject.gameObject.transform.Find(arm).GetComponent<Rigidbody2D>();
         childCollide = transform.Find("Handle").GetComponent<Collider2D>();
     }
 
