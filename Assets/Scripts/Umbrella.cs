@@ -23,10 +23,10 @@ public class Umbrella : Collectible, IUpdate
                 arm = "RightLimb";
                 break;
             case 1:
-                arm = "Joint1";
+                arm = "Head_S/Tongue";
                 break;
             case 2:
-                arm = "RightArm/RightArm1/RightArm2/RightArm3/RightHand";
+                arm = "Torso_A/RightArm/RightArm1/RightHand";
                 break;
         }
         player = PlayerObject.playerObject.gameObject.transform.Find(arm).GetComponent<Rigidbody2D>();
