@@ -20,7 +20,7 @@ public class Umbrella : Collectible, IUpdate
         switch (charType)
         {
             case 0:
-                arm = "Torso_B/RightLimb";
+                arm = "Torso_B/RightLimb/RightHand";
                 break;
             case 1:
                 arm = "Head_S/Tongue";

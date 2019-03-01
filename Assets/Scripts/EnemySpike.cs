@@ -12,11 +12,13 @@ public class EnemySpike : MonoBehaviour, IUpdate, IFixedUpdate
     public float radius = 5;
     public float spinSpeed;
     private Animator animator;
+    private Rigidbody2D rb;
 
     void Awake()
     {
         layermask = 1 << 8;
         animator = gameObject.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -35,6 +37,7 @@ public class EnemySpike : MonoBehaviour, IUpdate, IFixedUpdate
 
     public void FixedUpdateFunction()
     {
-        if (active) { GetComponent<Rigidbody2D>().angularVelocity = spinSpeed; }
+        if (active) { rb.angularVelocity = spinSpeed; }
+        else { rb.angularVelocity = 0; }
     }
 }
