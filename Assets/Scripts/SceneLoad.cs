@@ -13,11 +13,13 @@ public class SceneLoad : MonoBehaviour, IUpdate
     public Image loadImage;
     public float fadeTime = 3;
     private Color loadColour = new Color(0,0,0,1);
+    public bool isMenu = false;
 
     void Start()
     {
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
+        if (!isMenu) { GameController.gameController.ModeSwitch(); }
         CameraControl.camControl.followPlayer = true;
         time = fadeTime;
     }

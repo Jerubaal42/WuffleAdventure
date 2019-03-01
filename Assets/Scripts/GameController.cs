@@ -28,7 +28,9 @@ public class GameController : MonoBehaviour
     public bool isMenu = true;
     public GameObject pauseButton;
     public GameObject pauseCanvas;
+    public GameObject pauseImage;
     public int charType = 0;
+    public Sprite[] pauseSprites;
 
     private void Awake()
     {
@@ -123,6 +125,7 @@ public class GameController : MonoBehaviour
                 hasAllowedMovement = allowMovement;
                 Time.timeScale = 0;
                 allowMovement = false;
+                pauseImage.GetComponent<Image>().sprite = pauseSprites[Random.Range(0, pauseSprites.Length)];
                 pauseButton.SetActive(false);
                 pauseCanvas.SetActive(true);
                 isPaused = true;

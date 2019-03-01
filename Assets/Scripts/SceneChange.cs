@@ -24,6 +24,7 @@ public class SceneChange : MonoBehaviour, IUpdate
     {
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
+        if (!GameController.gameController.isMenu) { GameController.gameController.ModeSwitch(); }
         loadImage.enabled = true;
     }
 

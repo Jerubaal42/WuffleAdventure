@@ -749,6 +749,7 @@ MonoBehaviour:
   waitTime: 1
   loadImage: {fileID: 1433635161}
   fadeTime: 3
+  isMenu: 0
 --- !u!212 &2035130099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -912,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 832547853697852715, guid: aa528980443cf34438074e1409718d9e,
         type: 3}
       propertyPath: charType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 832547853697852715, guid: aa528980443cf34438074e1409718d9e,
         type: 3}
@@ -923,6 +924,16 @@ PrefabInstance:
         type: 3}
       propertyPath: isMenu
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832547854223652431, guid: aa528980443cf34438074e1409718d9e,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832547854223652431, guid: aa528980443cf34438074e1409718d9e,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa528980443cf34438074e1409718d9e, type: 3}

@@ -21,10 +21,7 @@ public class PlayerObject : MonoBehaviour
         switch (charType)
         {
             case 0:
-                transform.Find("RightLimb").gameObject.SetActive(true);
-                transform.Find("LeftLimb").gameObject.SetActive(true);
-                transform.Find("RightFoot").gameObject.SetActive(true);
-                transform.Find("LeftFoot").gameObject.SetActive(true);
+                transform.Find("Torso_B").gameObject.SetActive(true);
                 break;
             case 1:
                 transform.Find("Head_S").gameObject.SetActive(true);
@@ -40,28 +37,19 @@ public class PlayerObject : MonoBehaviour
         switch (charType)
         {
             case 0:
-                transform.Find("RightLimb").gameObject.SetActive(true);
-                transform.Find("LeftLimb").gameObject.SetActive(true);
-                transform.Find("RightFoot").gameObject.SetActive(true);
-                transform.Find("LeftFoot").gameObject.SetActive(true);
+                transform.Find("Torso_B").gameObject.SetActive(true);
                 transform.Find("Head_S").gameObject.SetActive(false);
                 transform.Find("Torso_A").gameObject.SetActive(false);
                 break;
             case 1:
                 transform.Find("Head_S").gameObject.SetActive(true);
                 transform.Find("Torso_A").gameObject.SetActive(false);
-                transform.Find("RightLimb").gameObject.SetActive(false);
-                transform.Find("LeftLimb").gameObject.SetActive(false);
-                transform.Find("RightFoot").gameObject.SetActive(false);
-                transform.Find("LeftFoot").gameObject.SetActive(false);
+                transform.Find("Torso_B").gameObject.SetActive(false);
                 break;
             case 2:
                 transform.Find("Torso_A").gameObject.SetActive(true);
                 transform.Find("Head_S").gameObject.SetActive(false);
-                transform.Find("RightLimb").gameObject.SetActive(false);
-                transform.Find("LeftLimb").gameObject.SetActive(false);
-                transform.Find("RightFoot").gameObject.SetActive(false);
-                transform.Find("LeftFoot").gameObject.SetActive(false);
+                transform.Find("Torso_B").gameObject.SetActive(false);
                 break;
         }
     }
