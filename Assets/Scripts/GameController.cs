@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseCanvas;
     public GameObject pauseImage;
+    public Image loadImage;
     public int charType = 0;
     public Sprite[] pauseSprites;
 
@@ -67,7 +68,8 @@ public class GameController : MonoBehaviour
 #endif
         foreach (IUpdate updateItem in updateList)
         {
-            updateItem.UpdateFunction();
+            if (updateItem == null) { removeUpdateList.Add(updateItem); }
+            else { updateItem.UpdateFunction(); }
         }
         foreach (IUpdate updateRemove in removeUpdateList)
         {
@@ -80,7 +82,8 @@ public class GameController : MonoBehaviour
     {
         foreach (IFixedUpdate updateItem in fixedUpdateList)
         {
-            updateItem.FixedUpdateFunction();
+            if (updateItem == null) { removeFixedUpdateList.Add(updateItem); }
+            else { updateItem.FixedUpdateFunction(); }
         }
         foreach (IFixedUpdate updateRemove in removeFixedUpdateList)
         {

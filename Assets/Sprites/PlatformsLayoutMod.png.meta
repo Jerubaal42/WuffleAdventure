@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: e55fe7fac2ee1cc4ba6532fb7b787ca9
+guid: afab4347257c2dc4498c07e86bd4f50d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Pause_0
-    21300002: Pause_1
-    21300004: Pause_2
+    21300000: PlatformsLayoutMod_0
+    21300002: PlatformsLayoutMod_1
+    21300004: PlatformsLayoutMod_2
+    21300006: PlatformsLayoutMod_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -48,7 +49,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,61 +99,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pause_0
+      name: PlatformsLayoutMod_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 150
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 14, z: 1, w: 13}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e424974b867adb419798f24218ebcb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsLayoutMod_1
       rect:
         serializedVersion: 2
         x: 0
         y: 100
-        width: 100
-        height: 100
+        width: 150
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 1, y: 21, z: 1, w: 24}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 231b17d5fcaacdb4f9e7961de3722b8d
+      spriteID: 0b8ed0a6ace0b5a49bfb52f46c25dabb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pause_1
+      name: PlatformsLayoutMod_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 0
+        y: 50
+        width: 150
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 1, y: 14, z: 1, w: 13}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8543667848acd644e8a3a017ab417507
+      spriteID: cd5476884fee2b349920ca2ca05f0e50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pause_2
+      name: PlatformsLayoutMod_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 100
+        width: 150
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 1, y: 25, z: 1, w: 24}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d755a60de4d3dcc4880ba0a91b11b724
+      spriteID: 9c4c04f48826aed479f7bf5957aa6089
       vertices: []
       indices: 
       edges: []
@@ -160,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2931757561d66f643a552f4c769fff46
+    spriteID: 7cde31565ff410d4797fcb8fea05076a
     vertices: []
     indices: 
     edges: []

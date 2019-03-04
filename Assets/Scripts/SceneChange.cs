@@ -7,10 +7,15 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour, IUpdate
 {
     private float time = 0;
-    public Image loadImage;
+    private Image loadImage;
     public float fadeTime = 3;
     private Color loadColour = new Color(0, 0, 0, 0);
     public string scene;
+
+    private void Start()
+    {
+        loadImage = GameController.gameController.loadImage;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +30,6 @@ public class SceneChange : MonoBehaviour, IUpdate
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
         if (!GameController.gameController.isMenu) { GameController.gameController.ModeSwitch(); }
-        loadImage.enabled = true;
     }
 
     public void UpdateFunction()

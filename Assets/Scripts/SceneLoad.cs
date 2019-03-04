@@ -10,7 +10,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
     public float waitTime = 1;
     private bool onLoad = true;
     private bool toGoal = true;
-    public Image loadImage;
+    private Image loadImage;
     public float fadeTime = 3;
     private Color loadColour = new Color(0,0,0,1);
     public bool isMenu = false;
@@ -21,6 +21,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
         GameController.gameController.allowMovement = false;
         if (!isMenu) { GameController.gameController.ModeSwitch(); }
         CameraControl.camControl.followPlayer = true;
+        loadImage = GameController.gameController.loadImage;
         time = fadeTime;
     }
 
@@ -36,7 +37,6 @@ public class SceneLoad : MonoBehaviour, IUpdate
             }
             else
             {
-                loadImage.enabled = false;
                 onLoad = false;
                 CameraControl.camControl.moveTime = scrollTime;
                 CameraControl.camControl.destination = transform.position;

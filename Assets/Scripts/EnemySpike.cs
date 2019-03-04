@@ -37,7 +37,12 @@ public class EnemySpike : MonoBehaviour, IUpdate, IFixedUpdate
 
     public void FixedUpdateFunction()
     {
-        if (active) { rb.angularVelocity = spinSpeed; }
+        if (rb == null)
+        {
+            GameController.gameController.removeFixedUpdateList.Add(this);
+            Destroy(this);
+        }
+        else if (active) { rb.angularVelocity = spinSpeed; }
         else { rb.angularVelocity = 0; }
     }
 }
