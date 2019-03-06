@@ -12,6 +12,7 @@ public class CameraControl : MonoBehaviour, IUpdate
     public float moveTime = 0;
     [HideInInspector]
     public Transform player;
+    public float camPos = -10;
 
     void Awake()
     {
@@ -30,7 +31,7 @@ public class CameraControl : MonoBehaviour, IUpdate
         {
             destination = player.position;
         }
-        destination = new Vector3(destination.x, destination.y, -10);
+        destination = new Vector3(destination.x, destination.y, camPos);
         transform.position = Vector3.SmoothDamp(transform.position, destination, ref currentVelocity, moveTime);
     }
 }
