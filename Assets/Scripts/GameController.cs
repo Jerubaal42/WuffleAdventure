@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseCanvas;
     public GameObject pauseImage;
+    public Text ScoreText;
     public Image loadImage;
     public int charType = 0;
     public Sprite[] pauseSprites;
@@ -41,6 +42,7 @@ public class GameController : MonoBehaviour
             gameController = this;
         }
         else { Destroy(gameObject); }
+        ScoreText.text = "Score: " + score;
     }
 
     void Update()
@@ -96,6 +98,7 @@ public class GameController : MonoBehaviour
     {
         score += scoreToAdd;
         Debug.Log(score);
+        ScoreText.text = "Score: " + score;
     }
 
     public void EmptyUpdate()
