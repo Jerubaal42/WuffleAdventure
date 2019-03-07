@@ -48,4 +48,9 @@ public class SceneChange : MonoBehaviour, IUpdate
             SceneManager.LoadScene(scene);
         }
     }
+
+    public void ChangeChar(int character)
+    {
+        GameController.gameController.charType = character;
+    }
 }

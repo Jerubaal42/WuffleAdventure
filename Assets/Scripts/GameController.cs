@@ -53,21 +53,6 @@ public class GameController : MonoBehaviour
         {
             PauseFunction();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            charType = 0;
-            PlayerObject.playerObject.changeChar(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            charType = 1;
-            PlayerObject.playerObject.changeChar(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            charType = 2;
-            PlayerObject.playerObject.changeChar(2);
-        }
 #endif
         foreach (IUpdate updateItem in updateList)
         {

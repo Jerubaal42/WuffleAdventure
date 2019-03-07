@@ -62,7 +62,7 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
-                        if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(touch.position)).sqrMagnitude < 9)
+                        if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(touch.position)).sqrMagnitude < 1)
                         {
                             mouseAge = 0;
                             startPos = speedMeasure[9];

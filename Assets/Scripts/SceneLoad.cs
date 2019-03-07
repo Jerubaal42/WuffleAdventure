@@ -20,7 +20,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
         if (isMenu != GameController.gameController.isMenu) { GameController.gameController.ModeSwitch(); }
-        CameraControl.camControl.followPlayer = true;
+        if (!isMenu) { CameraControl.camControl.followPlayer = true; }
         loadImage = GameController.gameController.loadImage;
         time = fadeTime;
         Time.timeScale = 1;
@@ -39,12 +39,15 @@ public class SceneLoad : MonoBehaviour, IUpdate
             else
             {
                 onLoad = false;
-                CameraControl.camControl.moveTime = scrollTime;
-                CameraControl.camControl.destination = transform.position;
-                CameraControl.camControl.followPlayer = false;
+                if (!isMenu)
+                {
+                    CameraControl.camControl.moveTime = scrollTime;
+                    CameraControl.camControl.destination = transform.position;
+                    CameraControl.camControl.followPlayer = false;
+                }
             }
         }
-        else
+        else if(!isMenu)
         {
             time += Time.deltaTime;
             if (time > (scrollTime + waitTime) * 2 && toGoal)
@@ -60,5 +63,6 @@ public class SceneLoad : MonoBehaviour, IUpdate
                 CameraControl.camControl.moveTime = 0;
             }
         }
+        else { GameController.gameController.removeUpdateList.Add(this); }
     }
 }
