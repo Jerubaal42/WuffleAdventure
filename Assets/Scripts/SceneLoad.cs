@@ -23,6 +23,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
         CameraControl.camControl.followPlayer = true;
         loadImage = GameController.gameController.loadImage;
         time = fadeTime;
+        Time.timeScale = 1;
     }
 
     public void UpdateFunction()
