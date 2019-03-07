@@ -29,7 +29,8 @@ public class GameController : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseCanvas;
     public GameObject pauseImage;
-    public Text ScoreText;
+    public GameObject scoreImage;
+    public Text scoreText;
     public Image loadImage;
     public int charType = 0;
     public Sprite[] pauseSprites;
@@ -42,7 +43,7 @@ public class GameController : MonoBehaviour
             gameController = this;
         }
         else { Destroy(gameObject); }
-        ScoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + score;
     }
 
     void Update()
@@ -98,7 +99,7 @@ public class GameController : MonoBehaviour
     {
         score += scoreToAdd;
         Debug.Log(score);
-        ScoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + score;
     }
 
     public void EmptyUpdate()
@@ -146,6 +147,7 @@ public class GameController : MonoBehaviour
             isMenu = false;
             pauseButton.SetActive(true);
             pauseCanvas.SetActive(false);
+            scoreImage.SetActive(true);
             Time.timeScale = 1f;
         }
         else
@@ -153,6 +155,7 @@ public class GameController : MonoBehaviour
             isMenu = true;
             pauseButton.SetActive(false);
             pauseCanvas.SetActive(false);
+            scoreImage.SetActive(false);
             Time.timeScale = 1f;
         }
     }

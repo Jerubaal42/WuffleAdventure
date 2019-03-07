@@ -180,7 +180,8 @@ MonoBehaviour:
   pauseButton: {fileID: 832547855106724797}
   pauseCanvas: {fileID: 832547855119490276}
   pauseImage: {fileID: 832547854223652425}
-  ScoreText: {fileID: 913171699693454379}
+  scoreImage: {fileID: 994195320341742058}
+  scoreText: {fileID: 913171699693454379}
   loadImage: {fileID: 832547855088245826}
   charType: 0
   pauseSprites:
@@ -662,7 +663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &832547855119490840
 RectTransform:
   m_ObjectHideFlags: 0

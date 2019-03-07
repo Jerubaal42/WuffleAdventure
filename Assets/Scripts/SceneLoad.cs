@@ -19,7 +19,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
     {
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
-        if (!isMenu) { GameController.gameController.ModeSwitch(); }
+        if (isMenu != GameController.gameController.isMenu) { GameController.gameController.ModeSwitch(); }
         CameraControl.camControl.followPlayer = true;
         loadImage = GameController.gameController.loadImage;
         time = fadeTime;
