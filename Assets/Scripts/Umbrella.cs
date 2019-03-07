@@ -44,6 +44,7 @@ public class Umbrella : Collectible, IUpdate
             gameObject.GetComponent<Rigidbody2D>().gravityScale = -4;
             gameObject.GetComponent<FlingableObject>().enabled = true;
             gameObject.layer = 8;
+            GameController.gameController.UpdateScore(500);
             GameController.gameController.updateList.Add(this);
         }
     }
