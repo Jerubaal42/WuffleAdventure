@@ -87,6 +87,12 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    public void ClearScore()
+    {
+        score = 0;
+        scoreText.text = "Score: " + score;
+    }
+
     public void EmptyUpdate()
     {
         foreach (IUpdate updateItem in updateList)

@@ -10,7 +10,7 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
     private Rigidbody2D rb;
     private Vector2 zero;
     private Camera mainCam;
-    private Vector2[] speedMeasure = new Vector2[10];
+    private Vector2[] speedMeasure = new Vector2[15];
     private int mouseAge = 0;
 #if UNITY_STANDALONE
     private bool aiming = false;
@@ -42,14 +42,15 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
                 if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition)).sqrMagnitude < 1)
                 {
                     mouseAge = 0;
-                    startPos = speedMeasure[9];
+                    startPos = speedMeasure[14];
                     Debug.Log("Start: " + startPos);
                     aiming = true;
                 }
             }
             if (Input.GetMouseButtonUp(0) && aiming == true)
             {
-                direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
+                if (Tutorial.tutorial != null && Tutorial.tutorial.active == true) { Tutorial.tutorial.Deactivate(); }
+                direction = speedMeasure[14] - (mouseAge > 15 ? speedMeasure[0] : startPos);
                 Debug.Log("End: " + direction);
                 flingActive = true;
                 aiming = false;
@@ -65,12 +66,13 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
                         if (((Vector2)transform.position - (Vector2)mainCam.ScreenToWorldPoint(touch.position)).sqrMagnitude < 1)
                         {
                             mouseAge = 0;
-                            startPos = speedMeasure[9];
+                            startPos = speedMeasure[14];
                             Debug.Log("Start: " + startPos);
                         }
                         break;
                     case TouchPhase.Ended:
-                        direction = speedMeasure[9] - (mouseAge > 10 ? speedMeasure[0] : startPos);
+                        if (Tutorial.tutorial != null && Tutorial.tutorial.active == true) { Tutorial.tutorial.Deactivate(); }
+                        direction = speedMeasure[14] - (mouseAge > 15 ? speedMeasure[0] : startPos);
                         Debug.Log("End: " + direction);
                         flingActive = true;
                         break;
@@ -83,9 +85,9 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
     public void FixedUpdateFunction()
     {
         mouseAge++;
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 15; i++)
         {
-            if (i == 9)
+            if (i == 14)
             {
                 speedMeasure[i] = Input.mousePosition;
             }

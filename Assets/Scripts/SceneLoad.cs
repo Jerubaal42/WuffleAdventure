@@ -58,6 +58,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
             }
             if (time > (scrollTime + waitTime) * 2 && !toGoal)
             {
+                if (Tutorial.tutorial != null) { Tutorial.tutorial.Activate(); }
                 GameController.gameController.removeUpdateList.Add(this);
                 GameController.gameController.allowMovement = true;
                 CameraControl.camControl.moveTime = 0;
