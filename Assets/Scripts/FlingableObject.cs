@@ -12,7 +12,6 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
     private Camera mainCam;
     private Vector2[] speedMeasure = new Vector2[15];
     private int mouseAge = 0;
-    public float speed = 3f;
 #if UNITY_STANDALONE
     private bool aiming = false;
 #endif
@@ -99,7 +98,7 @@ public class FlingableObject : MonoBehaviour, IUpdate, IFixedUpdate
         }
         if (flingActive)
         {
-            rb.AddForce(direction * speed);
+            rb.AddForce(direction);
             flingActive = false;
             direction = zero;
         }
