@@ -14,6 +14,5 @@ public class BoundingBar : SceneChange
     {
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Player") { ChangeScene(); }
-        else { Destroy(collision.gameObject); }
     }
 }
