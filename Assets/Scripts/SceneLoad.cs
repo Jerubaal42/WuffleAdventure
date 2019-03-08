@@ -14,6 +14,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
     public float fadeTime = 3;
     private Color loadColour = new Color(0,0,0,1);
     public bool isMenu = false;
+    public bool isEnd = false;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class SceneLoad : MonoBehaviour, IUpdate
         loadImage = GameController.gameController.loadImage;
         time = fadeTime;
         Time.timeScale = 1;
+        if (isEnd) { transform.Find("Score/Text").GetComponent<Text>().text = "Score " + GameController.gameController.totalScore; }
     }
 
     public void UpdateFunction()

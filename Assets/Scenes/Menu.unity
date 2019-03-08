@@ -668,7 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 3
-  scene: SampleScene
+  scene: Level1
+  resetScore: 1
 --- !u!114 &1257258641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +768,7 @@ MonoBehaviour:
   waitTime: 0
   fadeTime: 1
   isMenu: 1
+  isEnd: 0
 --- !u!1 &1371775801
 GameObject:
   m_ObjectHideFlags: 0
