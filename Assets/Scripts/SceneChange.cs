@@ -11,6 +11,7 @@ public class SceneChange : MonoBehaviour, IUpdate
     public float fadeTime = 3;
     private Color loadColour = new Color(0, 0, 0, 0);
     public string scene;
+    public bool resetScore = false;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class SceneChange : MonoBehaviour, IUpdate
 
     public void ChangeScene()
     {
+        if (resetScore) { GameController.gameController.ResetScore(); } else { GameController.gameController.ConglomerateScore(); }
         GameController.gameController.updateList.Add(this);
         GameController.gameController.allowMovement = false;
         if (!GameController.gameController.isMenu) { GameController.gameController.ModeSwitch(); }

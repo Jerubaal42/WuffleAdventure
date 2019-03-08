@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowMovement: 0
   score: 0
+  totalScore: 0
   isMenu: 1
   pauseButton: {fileID: 832547855106724797}
   pauseCanvas: {fileID: 832547855119490276}
@@ -1070,6 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 3
   scene: Menu
+  resetScore: 1
 --- !u!114 &3591075090037237303
 MonoBehaviour:
   m_ObjectHideFlags: 0

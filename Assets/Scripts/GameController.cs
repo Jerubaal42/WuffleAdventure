@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public List<IFixedUpdate> removeFixedUpdateList = new List<IFixedUpdate>();
     public bool allowMovement = false;
     public int score = 0;
+    public int totalScore = 0;
     private float initTimescale;
     private bool hasAllowedMovement;
     private bool isPaused = false;
@@ -84,13 +85,27 @@ public class GameController : MonoBehaviour
     {
         score += scoreToAdd;
         Debug.Log(score);
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + (totalScore + score);
+    }
+
+    public void ConglomerateScore()
+    {
+        totalScore += score;
+        ClearScore();
+        scoreText.text = "Score: " + (totalScore + score);
     }
 
     public void ClearScore()
     {
         score = 0;
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + (totalScore + score);
+    }
+
+    public void ResetScore()
+    {
+        totalScore = 0;
+        score = 0;
+        scoreText.text = "Score: " + (totalScore + score);
     }
 
     public void EmptyUpdate()
