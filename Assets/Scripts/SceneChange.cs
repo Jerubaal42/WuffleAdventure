@@ -56,4 +56,9 @@ public class SceneChange : MonoBehaviour, IUpdate
     {
         GameController.gameController.charType = character;
     }
+
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
 }
